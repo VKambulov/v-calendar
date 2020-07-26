@@ -59,6 +59,10 @@ export default {
                   'grid-column': c,
                 },
                 */
+                style: {
+                  'padding': 0,
+                  'grid-column': c,
+                },
                 on: {
                   keydown: e =>
                     this.handleCellKeydown({ row: r, column: c, event: e }),
@@ -120,6 +124,9 @@ export default {
       return {
         gridTemplateColumns: this.gridTemplateColumns,
         gridGap: this.gap,
+        margin: '5px',
+        'border-collapse': 'collapse',
+        display: 'inline-table',
       };
     },
     gridTemplateColumns() {

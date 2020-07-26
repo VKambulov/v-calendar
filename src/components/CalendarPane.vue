@@ -103,6 +103,7 @@ export default {
             {
               key: i + 1,
               class: [this.theme.weekdays],
+              styles: { 'text-align': 'center' }
               // class: ['vc-weekday', this.theme.weekdays],
             },
             [wl],
