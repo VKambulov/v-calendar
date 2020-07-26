@@ -19,6 +19,12 @@
 npm i --save v-calendar
 ```
 
+## About Fork
+
+This fork maked for support some old browsers (like as Firefox < 52 or Chrome < 49). For this changed calendar layout from grid to table and changed browser list to:
+```>1%, firefox >= 44, chrome >= 43, not ie 11 and not op_mini all```.<br>
+Note. This fork was intended for personal use and may no longer be supported.
+
 ## Documentation
 
 For full documentation, visit [vcalendar.io](https://vcalendar.io/).
