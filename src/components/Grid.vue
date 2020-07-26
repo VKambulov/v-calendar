@@ -27,6 +27,7 @@ export default {
 
     // Grid cells renderer
     const getCells = () => {
+      const rows = [];
       const cells = [];
       // Resolve default slot nodes (remove whitespaced)
       const nodes =
@@ -35,14 +36,17 @@ export default {
         [];
       // Build cells
       for (let r = 1, p = 1; r <= this.rows; r++) {
+        const rowCells = [];
+
         for (let c = 1; c <= this.columns; c++) {
           const rFromEnd = r - this.rows - 1;
           const cFromEnd = c - this.columns - 1;
           // Add the cell for current row & column
-          cells.push(
+          rowCells.push(
             h(
-              'div',
+              'th',
               {
+                /*
                 class: [
                   'vc-grid-cell',
                   `vc-grid-cell-row-${r}`,
@@ -54,6 +58,7 @@ export default {
                   'grid-row': r,
                   'grid-column': c,
                 },
+                */
                 on: {
                   keydown: e =>
                     this.handleCellKeydown({ row: r, column: c, event: e }),
@@ -63,14 +68,24 @@ export default {
             ),
           );
         }
+
+        rows.push(
+          h(
+            'tr',
+            {},
+            [
+              rowCells
+            ],
+          ),
+        );
       }
-      return cells;
+      return rows;
     };
 
     return h(
-      'div',
+      'table',
       {
-        class: 'vc-grid-container',
+        //class: 'vc-grid-container',
         style: this.containerStyle,
       },
       [...getCells()],

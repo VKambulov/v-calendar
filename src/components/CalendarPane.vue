@@ -102,7 +102,8 @@ export default {
             'div',
             {
               key: i + 1,
-              class: ['vc-weekday', this.theme.weekdays],
+              class: [this.theme.weekdays],
+              // class: ['vc-weekday', this.theme.weekdays],
             },
             [wl],
           ),
