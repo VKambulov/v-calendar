@@ -28,7 +28,6 @@ export default {
     // Grid cells renderer
     const getCells = () => {
       const rows = [];
-      const cells = [];
       // Resolve default slot nodes (remove whitespaced)
       const nodes =
         (this.$slots.default &&
@@ -39,29 +38,13 @@ export default {
         const rowCells = [];
 
         for (let c = 1; c <= this.columns; c++) {
-          const rFromEnd = r - this.rows - 1;
-          const cFromEnd = c - this.columns - 1;
           // Add the cell for current row & column
           rowCells.push(
             h(
               'th',
               {
-                /*
-                class: [
-                  'vc-grid-cell',
-                  `vc-grid-cell-row-${r}`,
-                  `vc-grid-cell-row-${rFromEnd}`,
-                  `vc-grid-cell-col-${c}`,
-                  `vc-grid-cell-col-${cFromEnd}`,
-                ],
                 style: {
-                  'grid-row': r,
-                  'grid-column': c,
-                },
-                */
-                style: {
-                  'padding': 0,
-                  'grid-column': c,
+                  'padding': 0
                 },
                 on: {
                   keydown: e =>
@@ -122,18 +105,10 @@ export default {
   computed: {
     containerStyle() {
       return {
-        gridTemplateColumns: this.gridTemplateColumns,
-        gridGap: this.gap,
-        margin: '5px',
-        'border-collapse': 'collapse',
-        display: 'inline-table',
+        width: '100%',
+        display: 'inline-table'
       };
-    },
-    gridTemplateColumns() {
-      return `repeat(${this.autofit ? 'auto-fit' : this.columns}, ${
-        this.columnWidth
-      })`;
-    },
+    }
   },
   methods: {
     handleCellKeydown({ row, column, event }) {

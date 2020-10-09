@@ -200,7 +200,7 @@ export default {
   display: flex;
   align-items: stretch;
   user-select: none;
-  padding: var(--header-padding);
+  padding: 9px;
   &.align-left {
     order: -1;
     justify-content: flex-start;
