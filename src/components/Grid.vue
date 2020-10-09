@@ -106,7 +106,9 @@ export default {
     containerStyle() {
       return {
         width: '100%',
-        display: 'inline-table'
+        display: 'inline-table',
+        'text-align': 'center',
+        'border-collapse': 'unset !important'
       };
     }
   },
